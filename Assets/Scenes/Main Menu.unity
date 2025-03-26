@@ -499,6 +499,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1854409284287551124, guid: 178183834fa89144ca8b2673bc820bee, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5501928926609487984, guid: 178183834fa89144ca8b2673bc820bee, type: 3}
       propertyPath: m_Name
       value: TransitionCanvas

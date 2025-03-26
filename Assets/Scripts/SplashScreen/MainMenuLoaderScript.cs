@@ -51,7 +51,7 @@ public class MainMenuLoaderScript : MonoBehaviour
 
         if (CanvasAnimator != null)
             CanvasAnimator.SetTrigger("LoadMainMenuParam");
-            for (float i = 1; i >= 0; i -= Time.deltaTime)
+            for (float i = ThemeSource.volume; i >= 0; i -= Time.deltaTime)
                 {
                     ThemeSource.volume = i;
                     yield return null;
