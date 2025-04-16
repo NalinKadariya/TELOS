@@ -612,6 +612,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 1017971965920130908, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017971965920130908, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017971965920130908, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017971965920130908, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017971965920130908, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017971965920130908, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4495723111191367625, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -800,7 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _walkSpeed: 3
   _runSpeed: 5
-  _animationBlendSpeed: 4
+  _animationBlendSpeed: 6
   _Camera: {fileID: 1357715484}
   _CameraRoot: {fileID: 281729956}
   _UpperLimit: -35
