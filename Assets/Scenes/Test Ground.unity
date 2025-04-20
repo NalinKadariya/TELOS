@@ -881,7 +881,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   footRayDistance: 2
-  footOffset: 0.09
+  footOffset: 0.086
 --- !u!1 &666158585
 GameObject:
   m_ObjectHideFlags: 0
