@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using CharacterControl.Manager;
 
 namespace CharacterControl.PlayerControl 
 {
@@ -10,13 +6,13 @@ namespace CharacterControl.PlayerControl
     {
         [SerializeField] private Transform _headBone;
         [SerializeField] private Transform _camera;
-        [SerializeField] private float _headRotationSpeed = 30f;
-        [SerializeField] private float _maxHeadAngle = 220f;
+        [SerializeField] private float _headRotationSpeed = 5f;
+        [SerializeField] private float _maxHeadAngle = 60f;
         [SerializeField] private Vector3 _headOffset = Vector3.zero;
-        
-        private Quaternion _lastCameraRotation;
-        private Quaternion _targetRotation;
-        private bool _cameraRotationChanged = false;
+
+        private float _currentPitch = 0f;
+        private float _accumulatedPitch = 0f;
+        private float _lastCameraPitch = 0f;
 
         private void Start()
         {
@@ -29,67 +25,45 @@ namespace CharacterControl.PlayerControl
 
             if (_camera == null)
             {
-                _camera = Camera.main.transform;
+                _camera = Camera.main?.transform;
+                if (_camera == null)
+                {
+                    Debug.LogError("No camera found!");
+                    enabled = false;
+                    return;
+                }
             }
-            
-            if (_camera != null)
-            {
-                _lastCameraRotation = _camera.rotation;
-                _targetRotation = _headBone.rotation;
-            }
+
+            _lastCameraPitch = GetCameraPitch();
         }
 
         private void LateUpdate()
         {
             if (_headBone == null || _camera == null) return;
 
-            if (_camera.rotation != _lastCameraRotation)
-            {
-                _cameraRotationChanged = true;
-                UpdateHeadRotation();
-                _lastCameraRotation = _camera.rotation;
-            }
-            else if (_cameraRotationChanged)
-            {
-                _headBone.rotation = Quaternion.Slerp(
-                    _headBone.rotation, 
-                    _targetRotation, 
-                    Time.deltaTime * _headRotationSpeed
-                );
-                
-                if (Quaternion.Angle(_headBone.rotation, _targetRotation) < 0.1f)
-                {
-                    _cameraRotationChanged = false;
-                }
-            }
-            
+            float currentCameraPitch = GetCameraPitch();
+            float pitchDelta = Mathf.DeltaAngle(_lastCameraPitch, currentCameraPitch);
+
+            _accumulatedPitch += pitchDelta;
+            _accumulatedPitch = Mathf.Clamp(_accumulatedPitch, -_maxHeadAngle, _maxHeadAngle);
+
+            _lastCameraPitch = currentCameraPitch;
+
+            _currentPitch = Mathf.Lerp(_currentPitch, _accumulatedPitch, Time.deltaTime * _headRotationSpeed);
+
+            Quaternion targetRotation = Quaternion.Euler(_currentPitch, 0f, 0f);
+            _headBone.localRotation = targetRotation;
+
             if (_headOffset != Vector3.zero)
             {
-                _headBone.localPosition = _headBone.localPosition.normalized + _headOffset;
+                _headBone.localPosition += _headOffset;
             }
         }
 
-        private void UpdateHeadRotation()
+        private float GetCameraPitch()
         {
-            Vector3 cameraForward = _camera.forward;
-            
-            Vector3 horizontalForward = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-            
-            Quaternion targetYawRotation = Quaternion.LookRotation(horizontalForward, Vector3.up);
-            
-            float verticalAngle = Mathf.Clamp(
-                Vector3.SignedAngle(horizontalForward, cameraForward, transform.right),
-                -_maxHeadAngle, 
-                _maxHeadAngle
-            );
-            
-            _targetRotation = targetYawRotation * Quaternion.Euler(verticalAngle, 0, 0);
-            
-            _headBone.rotation = Quaternion.Slerp(
-                _headBone.rotation, 
-                _targetRotation, 
-                Time.deltaTime * _headRotationSpeed
-            );
+            float pitch = _camera.eulerAngles.x;
+            return (pitch > 180f) ? pitch - 360f : pitch;
         }
     }
 }
