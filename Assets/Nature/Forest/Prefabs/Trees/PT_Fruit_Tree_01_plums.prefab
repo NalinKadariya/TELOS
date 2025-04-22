@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7929462325123785727}
   - component: {fileID: 2905107983372784782}
-  - component: {fileID: 8896295246221975204}
+  - component: {fileID: 4666320964395528586}
   m_Layer: 0
   m_Name: PT_Fruit_Tree_01_plums
   m_TagString: Untagged
@@ -150,8 +150,8 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6140726643089354878}
   m_Enabled: 1
---- !u!64 &8896295246221975204
-MeshCollider:
+--- !u!136 &4666320964395528586
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -168,10 +168,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Radius: 1.1
+  m_Height: 4.66
+  m_Direction: 1
+  m_Center: {x: -0.06, y: 1.9, z: -0.14}
 --- !u!1 &7389196695646074697
 GameObject:
   m_ObjectHideFlags: 0
