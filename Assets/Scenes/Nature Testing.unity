@@ -258,6 +258,11 @@ Transform:
   - {fileID: 11663378}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1089252670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3141614395163190097, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
+  m_PrefabInstance: {fileID: 3724125798499158480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1224087353
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +384,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!4 &1259219185 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2606441887872540167, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
+  m_PrefabInstance: {fileID: 3724125798499158480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1413179998
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +507,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5488220761845277883, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1089252670}
+    - target: {fileID: 5488220761845277883, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
+      propertyPath: CameraRoot
+      value: 
+      objectReference: {fileID: 1259219185}
     - target: {fileID: 5488220761845277883, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
       propertyPath: _UpperLimit
       value: -35

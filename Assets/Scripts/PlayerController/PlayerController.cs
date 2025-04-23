@@ -42,10 +42,14 @@ namespace CharacterControl.PlayerControl
             DisableCursor();
         }
 
+        private void Update()
+        {
+            CamMovements();  
+        }
+
         private void FixedUpdate()
         {
             Move();
-            CamMovements();
         }
 
         private void Move()
