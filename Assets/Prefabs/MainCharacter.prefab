@@ -538,15 +538,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 458.22
+      value: 193.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.277
+      value: 5.009
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 661.73
+      value: 474.26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalRotation.w
@@ -806,8 +806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a42da1f6e966e4a8438a0811f4e886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 3
-  _runSpeed: 5
+  _walkSpeed: 2
+  _runSpeed: 3
   _animationBlendSpeed: 6
   _Camera: {fileID: 3141614395163190097}
   _CameraRoot: {fileID: 2606441887872540167}
