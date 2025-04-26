@@ -15,6 +15,9 @@ namespace CharacterControl.Manager
         public bool IncreaseFlashlightIntensity { get; set; }
         public bool DecreaseFlashlightIntensity { get; set; }
 
+        // Map
+        public bool OpenCloseMap { get; set; }
+
 
         private InputActionMap _currentMap;
         private InputAction _moveAction;
@@ -22,6 +25,7 @@ namespace CharacterControl.Manager
         private InputAction _runAction;
         private InputAction _increaseIntensityAction;
         private InputAction _decreaseIntensityAction;
+        private InputAction _openCloseMapAction;
 
         private void Awake()
         {
@@ -34,12 +38,16 @@ namespace CharacterControl.Manager
             _increaseIntensityAction = _currentMap.FindAction("IncreaseFlashlightIntensity");
             _decreaseIntensityAction = _currentMap.FindAction("DecreaseFlashlightIntensity");
 
+            // Map actions
+            _openCloseMapAction = _currentMap.FindAction("OpenCloseMap");
+
             // Add
             _moveAction.performed += OnMove;
             _lookAction.performed += OnLook;
             _runAction.performed += OnRun;
             _increaseIntensityAction.performed += OnIncreaseFlashlightIntensity;
             _decreaseIntensityAction.performed += OnDecreaseFlashlightIntensity;
+            _openCloseMapAction.performed += OnOpenCloseMap;
 
             // Release
             _moveAction.canceled += OnMove;
@@ -47,6 +55,7 @@ namespace CharacterControl.Manager
             _runAction.canceled += OnRun;
             _increaseIntensityAction.canceled += OnIncreaseFlashlightIntensity;
             _decreaseIntensityAction.canceled += OnDecreaseFlashlightIntensity;
+            _openCloseMapAction.canceled += OnOpenCloseMap;
         }
 
         private void OnMove(InputAction.CallbackContext context)
@@ -82,6 +91,11 @@ namespace CharacterControl.Manager
         private void OnDecreaseFlashlightIntensity(InputAction.CallbackContext context)
         {
             DecreaseFlashlightIntensity = context.ReadValueAsButton();
+        }
+
+        private void OnOpenCloseMap(InputAction.CallbackContext context)
+        {
+            OpenCloseMap = context.ReadValueAsButton();
         }
 
     }
