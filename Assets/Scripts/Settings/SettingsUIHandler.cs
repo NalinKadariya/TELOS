@@ -23,7 +23,6 @@ namespace CharacterControl.MainMenu
 
         private void Start()
         {
-            ForceCloseCurrent();
             CloseAllRightPanels();
             if (_pauseMenuCanvas != null)
                 _pauseMenuCanvas.gameObject.SetActive(false);
@@ -59,6 +58,8 @@ namespace CharacterControl.MainMenu
             if (_pauseMenuCanvas != null)
                 GlobalUIManager.RequestOpen(_pauseMenuCanvas, OnPauseMenuClosed);
 
+            
+            ForceCloseCurrent();
             Time.timeScale = 0f;
             _isPaused = true;
 
@@ -68,7 +69,7 @@ namespace CharacterControl.MainMenu
 
         private void ResumeGame()
         {
-
+            ForceEnableDefaults();
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -164,8 +165,6 @@ namespace CharacterControl.MainMenu
 
         public void CloseAllPanels()
         {
-            ForceCloseCurrent();
-            ForceEnableDefaults();
             CloseAllRightPanels();
             GlobalUIManager.ForceCloseCurrent();
         }
