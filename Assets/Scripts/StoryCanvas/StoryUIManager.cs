@@ -39,7 +39,13 @@ namespace Story
             _currentPaperImage = _currentPaper.GetComponent<Image>();
 
             _storyCanvas.gameObject.SetActive(false);
+
+            foreach (var entry in StoryDatabase.GetCollectedStories())
+            {
+                AddStory(entry.ButtonName, entry.StoryText);
+            }
         }
+
 
         private void Update()
         {
@@ -116,6 +122,7 @@ namespace Story
             {
                 DisplayStory(newEntry);
             }
+            StoryDatabase.SaveStory(buttonName, storyText);
         }
 
         private void DisplayStory(StoryEntry entry)

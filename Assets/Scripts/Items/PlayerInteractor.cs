@@ -4,7 +4,6 @@ using PlayerSystem;
 using System.Collections.Generic;
 using CharacterControl.Manager;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting;
 
 public class PlayerInteractor : MonoBehaviour
 {
@@ -21,7 +20,6 @@ public class PlayerInteractor : MonoBehaviour
 
     [Header("Lists")]
     [SerializeField] private List<GameObject> _pickupableItems = new List<GameObject>();
-    [SerializeField] private List<GameObject> _interactableItems = new List<GameObject>();
 
     [Header("Highlight Material")]
     [SerializeField] private Material _highlightMaterial;
@@ -29,6 +27,8 @@ public class PlayerInteractor : MonoBehaviour
     private GameObject _currentTarget;
     private Renderer _currentRenderer;
     private Material _originalMaterial;
+    private bool _interactPressed = false;
+
 
     private void Start()
     {
@@ -42,7 +42,15 @@ public class PlayerInteractor : MonoBehaviour
     private void Update()
     {
         DetectTarget();
-        HandleInteraction();
+        if (_inputManager.PickupItem && !_interactPressed)
+        {
+            HandleInteraction();
+            _interactPressed = true;
+        }
+        else if (!_inputManager.PickupItem)
+        {
+            _interactPressed = false;
+        }
     }
 
     private void DetectTarget()
@@ -59,10 +67,14 @@ public class PlayerInteractor : MonoBehaviour
                 SetCurrentTarget(hitObject, $"[Pick Up: {hitObject.name}]");
                 return;
             }
-            else if (_interactableItems.Contains(hitObject))
+            else
             {
-                SetCurrentTarget(hitObject, $"[Interact]");
-                return;
+                IInteractable interactable = hitObject.GetComponentInParent<IInteractable>();
+                if (interactable != null)
+                {
+                    SetCurrentTarget(hitObject, $"[{interactable.GetInteractionText()}]");
+                    return;
+                }
             }
         }
 
@@ -73,8 +85,7 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (_currentTarget != target)
         {
-            if (_currentRenderer != null && _originalMaterial != null)
-                _currentRenderer.material = _originalMaterial;
+            RestoreOriginalMaterial();
 
             _currentTarget = target;
             _currentRenderer = _currentTarget.GetComponent<Renderer>();
@@ -105,9 +116,9 @@ public class PlayerInteractor : MonoBehaviour
                 Destroy(_currentTarget);
                 ClearTarget();
             }
-            else if (_interactableItems.Contains(_currentTarget))
+            else
             {
-                InteractableObject interactable = _currentTarget.GetComponentInParent<InteractableObject>();
+                IInteractable interactable = _currentTarget.GetComponentInParent<IInteractable>();
                 if (interactable != null)
                 {
                     interactable.Interact();
@@ -117,11 +128,9 @@ public class PlayerInteractor : MonoBehaviour
         }
     }
 
-
     private void ClearTarget()
     {
-        if (_currentRenderer != null && _originalMaterial != null)
-            _currentRenderer.material = _originalMaterial;
+        RestoreOriginalMaterial();
 
         _currentTarget = null;
         _currentRenderer = null;
@@ -129,5 +138,11 @@ public class PlayerInteractor : MonoBehaviour
 
         if (_itemNameText != null)
             _itemNameText.text = "";
+    }
+
+    private void RestoreOriginalMaterial()
+    {
+        if (_currentRenderer != null && _originalMaterial != null)
+            _currentRenderer.material = _originalMaterial;
     }
 }

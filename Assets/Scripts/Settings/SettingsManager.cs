@@ -125,7 +125,8 @@ namespace CharacterControl.MainMenu
 
         private void SetGraphicsQuality(int qualityLevel)
         {
-            QualitySettings.SetQualityLevel(qualityLevel);
+            //QualitySettings.SetQualityLevel(qualityLevel);
+            Debug.Log("[Settings] Graphics Quality set to: " + qualityLevel);
         }
 
         private void SetSubtitles(bool enabled)

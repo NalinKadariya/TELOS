@@ -6,7 +6,7 @@ namespace CharacterControl.Settings
     public class SettingsData
     {
         public float MasterVolume = 0f;
-        public float MouseSensitivity = 2f;
+        public float MouseSensitivity = 8f;
         public int GraphicsQuality = 1;
         public bool SubtitlesEnabled = true;
     }
