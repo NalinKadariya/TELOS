@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "PauseAction",
+                    "type": "Button",
+                    "id": "683dc5ec-8310-40df-8930-71b50827236f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -159,7 +168,7 @@
                 {
                     "name": "",
                     "id": "783abbac-3a12-47fa-9001-c6c78b795d87",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -170,7 +179,7 @@
                 {
                     "name": "",
                     "id": "be1786dc-fe96-47ce-8c6a-d8d1e918c8f9",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -208,6 +217,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "PickupItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fafe65a5-8be7-4025-89cb-f0acce2cfba5",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

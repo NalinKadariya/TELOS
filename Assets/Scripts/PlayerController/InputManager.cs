@@ -17,6 +17,7 @@ namespace CharacterControl.Manager
         public bool OpenCloseStory { get; set; }
         public bool OpenCloseMap { get; set; }
         public bool PickupItem { get; private set; }
+        public bool PauseAction { get; private set; }
 
 
         private InputActionMap _currentMap;
@@ -28,6 +29,7 @@ namespace CharacterControl.Manager
         private InputAction _openCloseMapAction;
         private InputAction _openCloseStoryAction;
         private InputAction _pickupItemAction;
+        private InputAction _pauseAction;
 
 
         private void Awake()
@@ -41,6 +43,7 @@ namespace CharacterControl.Manager
             _openCloseMapAction = _currentMap.FindAction("OpenCloseMap");
             _openCloseStoryAction = _currentMap.FindAction("OpenCloseStory");
             _pickupItemAction = _currentMap.FindAction("PickupItem");
+            _pauseAction = _currentMap.FindAction("PauseAction");
 
             // Add
             _moveAction.performed += OnMove;
@@ -51,6 +54,7 @@ namespace CharacterControl.Manager
             _openCloseMapAction.performed += OnOpenCloseMap;
             _openCloseStoryAction.performed += OnOpenCloseStory;
             _pickupItemAction.performed += OnPickupItem;
+            _pauseAction.performed += OnPauseAction;
 
             // Release
             _moveAction.canceled += OnMove;
@@ -61,6 +65,7 @@ namespace CharacterControl.Manager
             _openCloseMapAction.canceled += OnOpenCloseMap;
             _openCloseStoryAction.canceled += OnOpenCloseStory;
             _pickupItemAction.canceled += OnPickupItem;
+            _pauseAction.canceled += OnPauseAction;
         }
 
         private void OnMove(InputAction.CallbackContext context)
@@ -113,5 +118,10 @@ namespace CharacterControl.Manager
             PickupItem = context.ReadValueAsButton();
         }
 
+        private void OnPauseAction(InputAction.CallbackContext context)
+        {
+            PauseAction = context.ReadValueAsButton();
+
+        }
     }
 }

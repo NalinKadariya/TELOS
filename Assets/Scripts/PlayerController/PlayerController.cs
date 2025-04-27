@@ -124,5 +124,11 @@ namespace CharacterControl.PlayerControl
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+
+        public void SetMouseSensitivity(float newSensitivity)
+        {
+            _MouseSensitivity = newSensitivity;
+        }
+
     }
 }
