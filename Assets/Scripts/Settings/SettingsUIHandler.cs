@@ -105,6 +105,7 @@ namespace CharacterControl.MainMenu
             {
                 if (c != null)
                     c.gameObject.SetActive(false);
+                    Debug.Log("[SettingsUI] Canvas disabled: " + c.name);
             }
         }
 
