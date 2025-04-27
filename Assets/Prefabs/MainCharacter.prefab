@@ -183,10 +183,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4270955241790626934}
-  - component: {fileID: 5716670378184400721}
   - component: {fileID: 2675532896850114624}
   m_Layer: 0
-  m_Name: ItemsManager
+  m_Name: SoundEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,29 +206,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1041569079365084518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5716670378184400721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4935842763144940981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0ec3455a1ff0478cfca3dc130a417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _flashlight: {fileID: 287279197806860624}
-  _intensitySteps:
-  - 0
-  - 2
-  - 5
-  - 10
-  _startingStepIndex: 2
-  _audioSource: {fileID: 2675532896850114624}
-  _intensityUpClip: {fileID: 8300000, guid: 2d48d991b601dfd4a8b0db05b3647a5f, type: 3}
-  _intensityDownClip: {fileID: 8300000, guid: 45ee6610aa949774fad054fed65c334f, type: 3}
-  _inputManager: {fileID: 1354662292514702020}
 --- !u!82 &2675532896850114624
 AudioSource:
   m_ObjectHideFlags: 0
@@ -995,19 +971,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 96.667
+      value: 296.168
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.112
+      value: 4.953
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 322.735
+      value: 392.964
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92558867
+      value: -0.7775861
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1015,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.37853098
+      value: -0.62877643
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1027,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -44.485
+      value: -282.08002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1047,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_TagString
-      value: Rock
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1017971965920130908, guid: 3f02720edf34d6c4e97a2ce34f381c87, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1271,7 +1247,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378220058639761372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5a42da1f6e966e4a8438a0811f4e886, type: 3}
   m_Name: 
@@ -1283,7 +1259,7 @@ MonoBehaviour:
   _CameraRoot: {fileID: 2606441887872540167}
   _UpperLimit: -35
   _LowerLimit: 70
-  _MouseSensitivity: 10
+  _MouseSensitivity: 5
   _mouseSmoothTime: 0.03
 --- !u!114 &710694160472319439
 MonoBehaviour:
@@ -1350,10 +1326,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8ed1d8eb186b9854b9859f1733877bf0, type: 3}
   - {fileID: 8300000, guid: 382e9509049cf40439fdcd62c9f05aab, type: 3}
   _rockClips:
-  - {fileID: 8300000, guid: 5def5b48a2d53f643bbeeaef2dd1ce75, type: 3}
-  - {fileID: 8300000, guid: 7519f320b931d4e42a585d42b3e46c7e, type: 3}
-  - {fileID: 8300000, guid: ae790742c9f81944db0ef25d965ea802, type: 3}
-  - {fileID: 8300000, guid: 44218c4abee00fa4f8c7f418439a9102, type: 3}
+  - {fileID: 8300000, guid: ddfb19796974a1d43856ea8b741b55d3, type: 3}
+  - {fileID: 8300000, guid: e9043d0a263c0154aa00df63b1e5812d, type: 3}
+  - {fileID: 8300000, guid: 63322bffd2de4c14692d6e48bed599b5, type: 3}
+  - {fileID: 8300000, guid: eeaf09a6d45e9774abe3c3afc4718fb6, type: 3}
   _defaultClips:
   - {fileID: 8300000, guid: ddfb19796974a1d43856ea8b741b55d3, type: 3}
   - {fileID: 8300000, guid: e9043d0a263c0154aa00df63b1e5812d, type: 3}

@@ -11,12 +11,12 @@ namespace CharacterControl.Manager
         public Vector2 Move {get; private set;}
         public Vector2 Look {get; private set;}
         public bool Run {get; private set;}
-        // Flashlight
+
         public bool IncreaseFlashlightIntensity { get; set; }
         public bool DecreaseFlashlightIntensity { get; set; }
-
-        // Map
+        public bool OpenCloseStory { get; set; }
         public bool OpenCloseMap { get; set; }
+        public bool OpenCloseInventory { get; set; }
 
 
         private InputActionMap _currentMap;
@@ -26,6 +26,7 @@ namespace CharacterControl.Manager
         private InputAction _increaseIntensityAction;
         private InputAction _decreaseIntensityAction;
         private InputAction _openCloseMapAction;
+        private InputAction _openCloseStoryAction;
 
         private void Awake()
         {
@@ -33,13 +34,10 @@ namespace CharacterControl.Manager
             _moveAction = _currentMap.FindAction("Move");
             _lookAction = _currentMap.FindAction("Look");
             _runAction = _currentMap.FindAction("Run");
-
-            // Flashlight actions
             _increaseIntensityAction = _currentMap.FindAction("IncreaseFlashlightIntensity");
             _decreaseIntensityAction = _currentMap.FindAction("DecreaseFlashlightIntensity");
-
-            // Map actions
             _openCloseMapAction = _currentMap.FindAction("OpenCloseMap");
+            _openCloseStoryAction = _currentMap.FindAction("OpenCloseStory");
 
             // Add
             _moveAction.performed += OnMove;
@@ -48,6 +46,7 @@ namespace CharacterControl.Manager
             _increaseIntensityAction.performed += OnIncreaseFlashlightIntensity;
             _decreaseIntensityAction.performed += OnDecreaseFlashlightIntensity;
             _openCloseMapAction.performed += OnOpenCloseMap;
+            _openCloseStoryAction.performed += OnOpenCloseStory;
 
             // Release
             _moveAction.canceled += OnMove;
@@ -56,6 +55,7 @@ namespace CharacterControl.Manager
             _increaseIntensityAction.canceled += OnIncreaseFlashlightIntensity;
             _decreaseIntensityAction.canceled += OnDecreaseFlashlightIntensity;
             _openCloseMapAction.canceled += OnOpenCloseMap;
+            _openCloseStoryAction.canceled += OnOpenCloseStory;
         }
 
         private void OnMove(InputAction.CallbackContext context)
@@ -96,6 +96,11 @@ namespace CharacterControl.Manager
         private void OnOpenCloseMap(InputAction.CallbackContext context)
         {
             OpenCloseMap = context.ReadValueAsButton();
+        }
+
+        private void OnOpenCloseStory(InputAction.CallbackContext context)
+        {
+            OpenCloseStory = context.ReadValueAsButton();
         }
 
     }
