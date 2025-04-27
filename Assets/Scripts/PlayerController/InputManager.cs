@@ -16,7 +16,6 @@ namespace CharacterControl.Manager
         public bool DecreaseFlashlightIntensity { get; set; }
         public bool OpenCloseStory { get; set; }
         public bool OpenCloseMap { get; set; }
-        public bool OpenCloseInventory { get; set; }
         public bool PickupItem { get; private set; }
 
 

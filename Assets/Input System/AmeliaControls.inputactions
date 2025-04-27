@@ -69,15 +69,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "OpenCloseInventory",
-                    "type": "Button",
-                    "id": "d59bcc4d-dcbc-48ea-83ff-5187d6cab241",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "PickupItem",
                     "type": "Button",
                     "id": "694e7457-38a5-4f6a-a4a9-87023b65d389",
@@ -168,7 +159,7 @@
                 {
                     "name": "",
                     "id": "783abbac-3a12-47fa-9001-c6c78b795d87",
-                    "path": "<Keyboard>/h",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -179,7 +170,7 @@
                 {
                     "name": "",
                     "id": "be1786dc-fe96-47ce-8c6a-d8d1e918c8f9",
-                    "path": "<Keyboard>/g",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -206,28 +197,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "OpenCloseStory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4df435be-95bf-4cd4-9ff2-c991a4b081ca",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "OpenCloseInventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ef3da875-a2f5-4550-8525-e72eb0c3915d",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PickupItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
