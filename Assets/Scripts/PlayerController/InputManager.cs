@@ -17,6 +17,7 @@ namespace CharacterControl.Manager
         public bool OpenCloseStory { get; set; }
         public bool OpenCloseMap { get; set; }
         public bool OpenCloseInventory { get; set; }
+        public bool PickupItem { get; private set; }
 
 
         private InputActionMap _currentMap;
@@ -27,6 +28,8 @@ namespace CharacterControl.Manager
         private InputAction _decreaseIntensityAction;
         private InputAction _openCloseMapAction;
         private InputAction _openCloseStoryAction;
+        private InputAction _pickupItemAction;
+
 
         private void Awake()
         {
@@ -38,6 +41,7 @@ namespace CharacterControl.Manager
             _decreaseIntensityAction = _currentMap.FindAction("DecreaseFlashlightIntensity");
             _openCloseMapAction = _currentMap.FindAction("OpenCloseMap");
             _openCloseStoryAction = _currentMap.FindAction("OpenCloseStory");
+            _pickupItemAction = _currentMap.FindAction("PickupItem");
 
             // Add
             _moveAction.performed += OnMove;
@@ -47,6 +51,7 @@ namespace CharacterControl.Manager
             _decreaseIntensityAction.performed += OnDecreaseFlashlightIntensity;
             _openCloseMapAction.performed += OnOpenCloseMap;
             _openCloseStoryAction.performed += OnOpenCloseStory;
+            _pickupItemAction.performed += OnPickupItem;
 
             // Release
             _moveAction.canceled += OnMove;
@@ -56,6 +61,7 @@ namespace CharacterControl.Manager
             _decreaseIntensityAction.canceled += OnDecreaseFlashlightIntensity;
             _openCloseMapAction.canceled += OnOpenCloseMap;
             _openCloseStoryAction.canceled += OnOpenCloseStory;
+            _pickupItemAction.canceled += OnPickupItem;
         }
 
         private void OnMove(InputAction.CallbackContext context)
@@ -101,6 +107,11 @@ namespace CharacterControl.Manager
         private void OnOpenCloseStory(InputAction.CallbackContext context)
         {
             OpenCloseStory = context.ReadValueAsButton();
+        }
+
+        private void OnPickupItem(InputAction.CallbackContext context)
+        {
+            PickupItem = context.ReadValueAsButton();
         }
 
     }
