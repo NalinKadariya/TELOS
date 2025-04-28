@@ -1,6 +1,6 @@
 using UnityEngine;
 using Story;
-using PlayerSystem; // <-- Needed for PlayerInventory
+using PlayerSystem;
 
 public class InteractTutorialPaper : MonoBehaviour, IInteractable
 {

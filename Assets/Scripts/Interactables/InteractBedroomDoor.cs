@@ -46,8 +46,8 @@ public class InteractBedroomDoor : MonoBehaviour, IInteractable
     private bool HasRequiredItems()
     {
         return PlayerInventory.Instance.HasItem("HasTutorial") &&
-               PlayerInventory.Instance.HasItem("HasObjectives");
-               // PlayerInventory.Instance.HasItem("HasInteractedWithShelf"); 
+               PlayerInventory.Instance.HasItem("HasObjectives") &&
+               PlayerInventory.Instance.HasItem("HasInteractedWithShelf");
     }
 
     private void AnimateDoor()

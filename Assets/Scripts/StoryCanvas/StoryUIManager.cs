@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace Story
 {
@@ -96,6 +97,11 @@ namespace Story
 
         public void AddStory(string buttonName, string storyText)
         {
+            if (HasStory(buttonName))
+            {
+                return;
+            }
+
             GameObject newButton = Instantiate(_buttonPrefab, _leftPanelContent);
             newButton.GetComponentInChildren<TextMeshProUGUI>().text = buttonName;
 
@@ -140,6 +146,17 @@ namespace Story
                 }
             }
         }
+
+        public bool HasStory(string buttonName)
+        {
+            foreach (var entry in _storyEntries)
+            {
+                if (entry.Button != null && entry.Button.GetComponentInChildren<TextMeshProUGUI>().text == buttonName)
+                    return true;
+            }
+            return false;
+        }
+
 
         private class StoryEntry
         {
