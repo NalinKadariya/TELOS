@@ -1,5 +1,6 @@
 using UnityEngine;
 using PlayerSystem;
+using System.Collections;
 
 public class InteractFireplace : MonoBehaviour, IInteractable
 {
@@ -9,20 +10,28 @@ public class InteractFireplace : MonoBehaviour, IInteractable
     [SerializeField] private string _startFireDialogID = "Fireplace Fire";
 
     private bool _fireStarted = false;
+    private bool _itemGiven = false;
+    private bool _interactionTriggered = false;
 
     public string GetInteractionText()
     {
         if (_fireStarted)
             return "Warm and cozy.";
-            PlayerInventory.Instance.AddItem("HasInteractedWithFireplace");
+
         if (HasAllLogs())
             return "Start a fire.";
-        
+
         return "Collect logs to start a fire.";
     }
 
     public void Interact()
     {
+        if (!_interactionTriggered)
+        {
+            _interactionTriggered = true;
+            StartCoroutine(GiveItemAfterDelay(9f));
+        }
+
         if (_fireStarted)
             return;
 
@@ -44,8 +53,6 @@ public class InteractFireplace : MonoBehaviour, IInteractable
         return PlayerInventory.Instance.HasItem("Log1") &&
                PlayerInventory.Instance.HasItem("Log2") &&
                PlayerInventory.Instance.HasItem("Log3");
-
-
     }
 
     private void StartFire()
@@ -54,5 +61,16 @@ public class InteractFireplace : MonoBehaviour, IInteractable
             _fireGameObject.SetActive(true);
 
         _fireStarted = true;
+    }
+
+    private IEnumerator GiveItemAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (!_itemGiven && PlayerInventory.Instance != null)
+        {
+            PlayerInventory.Instance.AddItem("HasInteractedWithFireplace");
+            _itemGiven = true;
+        }
     }
 }

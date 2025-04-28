@@ -600,7 +600,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasAnimator: {fileID: 192776233}
   mainMenuAnimator: {fileID: 134828449}
-  sceneToLoad: House
+  houseSceneName: House
+  forestSceneName: ForestMap
   fadeOutDuration: 1.5
 --- !u!1 &148083216
 GameObject:
