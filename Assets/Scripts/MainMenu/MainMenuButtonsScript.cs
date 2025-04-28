@@ -8,7 +8,8 @@ namespace CharacterControl.MainMenu
     {
         [SerializeField] private Animator canvasAnimator;
         [SerializeField] private Animator mainMenuAnimator;
-        [SerializeField] private string sceneToLoad = "House";
+        [SerializeField] private string houseSceneName = "House";
+        [SerializeField] private string forestSceneName = "ForestMap";
         [SerializeField] private float fadeOutDuration = 1.5f;
 
         public void QuitGame()
@@ -24,7 +25,7 @@ namespace CharacterControl.MainMenu
             {
                 mainMenuAnimator.SetTrigger("HideMenu");
                 canvasAnimator.SetTrigger("FadeOutSceneParam");
-                StartCoroutine(LoadSceneAfterFade());
+                StartCoroutine(LoadScenesAfterFade());
             }
             else
             {
@@ -32,21 +33,45 @@ namespace CharacterControl.MainMenu
             }
         }
 
-        private IEnumerator LoadSceneAfterFade()
+        private IEnumerator LoadScenesAfterFade()
         {
             yield return new WaitForSeconds(fadeOutDuration);
 
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
-            asyncLoad.allowSceneActivation = false;
+            AsyncOperation houseLoad = SceneManager.LoadSceneAsync(houseSceneName, LoadSceneMode.Additive);
+            AsyncOperation forestLoad = SceneManager.LoadSceneAsync(forestSceneName, LoadSceneMode.Additive);
 
-            while (!asyncLoad.isDone)
+            houseLoad.allowSceneActivation = false;
+            forestLoad.allowSceneActivation = false;
+
+            while (!houseLoad.isDone || !forestLoad.isDone)
             {
-                if (asyncLoad.progress >= 0.9f)
-                {
-                    asyncLoad.allowSceneActivation = true;
-                }
+                if (houseLoad.progress >= 0.9f)
+                    houseLoad.allowSceneActivation = true;
+
+                if (forestLoad.progress >= 0.9f)
+                    forestLoad.allowSceneActivation = true;
+
                 yield return null;
             }
+
+            Scene forestScene = SceneManager.GetSceneByName(forestSceneName);
+            Scene houseScene = SceneManager.GetSceneByName(houseSceneName);
+
+            if (forestScene.isLoaded)
+            {
+                foreach (GameObject obj in forestScene.GetRootGameObjects())
+                {
+                    obj.SetActive(false); 
+                }
+            }
+            else
+            {
+                Debug.LogError("Forest scene not loaded properly!");
+            }
+
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.UnloadSceneAsync(currentScene);
+        
         }
     }
 }
