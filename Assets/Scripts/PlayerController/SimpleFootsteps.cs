@@ -37,23 +37,34 @@ namespace CharacterControl.SimpleFootsteps
                 Terrain _hitTerrain = _hit.collider.GetComponent<Terrain>();
                 if (_hitTerrain != null)
                 {
-                    int _textureIndex = GetMainTexture(_hit.point);
-
-                    if (_textureIndex >= 0 && _textureIndex < _terrain.terrainData.terrainLayers.Length)
+                    if (_terrain == null)
                     {
-                        string _layerName = _terrain.terrainData.terrainLayers[_textureIndex].diffuseTexture.name.ToLower();
+                        GameObject terrainObj = GameObject.FindGameObjectWithTag("Terrain");
+                        if (terrainObj != null)
+                        {
+                            _terrain = terrainObj.GetComponent<Terrain>();
+                        }
+                    }
 
-                        if (_layerName.Contains("grass"))
-                            return GetRandomClip(_grassClips);
+                    if (_terrain != null)
+                    {
+                        int _textureIndex = GetMainTexture(_hit.point);
 
-                        if (_layerName.Contains("dirt"))
-                            return GetRandomClip(_dirtClips);
+                        if (_textureIndex >= 0 && _textureIndex < _terrain.terrainData.terrainLayers.Length)
+                        {
+                            string _layerName = _terrain.terrainData.terrainLayers[_textureIndex].diffuseTexture.name.ToLower();
+
+                            if (_layerName.Contains("grass"))
+                                return GetRandomClip(_grassClips);
+
+                            if (_layerName.Contains("dirt"))
+                                return GetRandomClip(_dirtClips);
+                        }
                     }
 
                     return GetRandomClip(_defaultClips);
                 }
 
-                // If not terrain, check tag
                 string _tag = _hit.collider.tag;
 
                 switch (_tag)
@@ -66,6 +77,7 @@ namespace CharacterControl.SimpleFootsteps
 
             return null;
         }
+
 
         private int GetMainTexture(Vector3 _worldPos)
         {

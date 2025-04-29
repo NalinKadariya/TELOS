@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class SetParentToDontDestroy : MonoBehaviour
 {
-    private static GameObject _dontDestroyContainer;
+    private static SetParentToDontDestroy  _instance;
 
     private void Awake()
     {
-        if (_dontDestroyContainer == null)
+        if (_instance != null)
         {
-            _dontDestroyContainer = new GameObject("DontDestroyOnLoad_Container");
-            DontDestroyOnLoad(_dontDestroyContainer);
+            Destroy(gameObject);
+            return;
         }
 
-        transform.SetParent(_dontDestroyContainer.transform);
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 }

@@ -123,5 +123,7 @@ namespace CharacterControl.Manager
             PauseAction = context.ReadValueAsButton();
 
         }
+
+        
     }
 }

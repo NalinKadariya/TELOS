@@ -1,9 +1,9 @@
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using System.Collections;
-    using CharacterControl.Settings;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using CharacterControl.Settings;
 
-   namespace SceneSwitchManagerNameSpace.SceneManagement
+namespace SceneSwitchManagerNameSpace.SceneManagement
 {
     public class SceneSwitchManager : MonoBehaviour
     {
@@ -14,6 +14,10 @@
         [Header("Scene Names")]
         [SerializeField] private string _houseSceneName = "House";
         [SerializeField] private string _forestSceneName = "ForestMap";
+
+        [Header("Spawn Positions")]
+        [SerializeField] private Vector3 _houseSpawnPosition = new Vector3(-1.76395464f, 0.121195674f, 3.2233901f);
+        [SerializeField] private Vector3 _forestSpawnPosition = new Vector3(296.167999f, 4.95300007f, 392.963989f);
 
         private Scene _houseScene;
         private Scene _forestScene;
@@ -80,6 +84,7 @@
                         obj.SetActive(true);
                     }
                 }
+
             }
 
             if (fromSceneName == _forestSceneName && toSceneName == _houseSceneName)
