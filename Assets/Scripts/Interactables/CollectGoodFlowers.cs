@@ -33,5 +33,6 @@ public class CollectGoodFlowers : MonoBehaviour, IInteractable
         DialogManager.PlayDialogsQueue(_dialogSequence);
         _hasInteracted = true;
         PlayerSystem.PlayerInventory.Instance.AddItem("Flowers");
+        Destroy(gameObject);
     }
 }

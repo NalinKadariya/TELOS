@@ -7472,6 +7472,7 @@ MonoBehaviour:
   _initialDialogID: Vase Quest
   _itemRequired: Flowers
   _successDialogID: Vase Found
+  _rewardItemID: VaseInteracted
   _currentVase: {fileID: 203487013}
   _replacedVase: {fileID: 1291621287}
 --- !u!65 &903624213
@@ -13114,16 +13115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _storyUIManager: {fileID: 1414786327}
   _buttonName: Objectives
-  _storyText: 'Notes to myself;
-
-    1) Fire the fireplace.
-
-    2) Fill the vase
-
-    3)
-    etc etc
-
-    4) Unlock the shelf in bedroom.'
+  _storyText: Exlore, and complete tasks. Once you have explored and completed enough
+    tasks, you shall know the truth.
 --- !u!1 &1817947211
 GameObject:
   m_ObjectHideFlags: 0

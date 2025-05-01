@@ -62,6 +62,14 @@ public class InteractInventoryDoorDialog : MonoBehaviour, IInteractable
         _isOpen = !_isOpen;
         _targetY = _isOpen ? _openRotationY : _closedRotationY;
         _isAnimating = true;
+
+        if (HasRequiredItems())
+        {
+            foreach (var item in _requiredItems)
+            {
+                PlayerInventory.Instance.AddItem("GameFinished");
+            }
+        }
     }
 
     private bool HasRequiredItems()

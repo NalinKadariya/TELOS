@@ -37,5 +37,6 @@ public class PlacingFlowerInGrave : MonoBehaviour, IInteractable
         DialogManager.PlayDialogsQueue(_dialogSequence);
         _hasInteracted = true;
         PlayerSystem.PlayerInventory.Instance.AddItem("AmysGravenGivenFlower");
+        PlayerSystem.PlayerInventory.Instance.AddItem("AmysGraveSeen");
     }
 }
