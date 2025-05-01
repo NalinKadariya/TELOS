@@ -12,7 +12,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private Canvas _memoryCanvas;
     [SerializeField] private GameObject _memoryImagePrefab;
     [SerializeField] private Transform _memoryCanvasContent;
-    [SerializeField] private float _memoryFlashDuration = 1.5f;
+    [SerializeField] private float _memoryFlashDuration = 2f;
     [SerializeField] private StoryUIManager _storyUIManager;
 
     [System.Serializable]
@@ -92,8 +92,12 @@ public class DialogManager : MonoBehaviour
     {
         _isPlaying = true;
 
-        foreach (var id in dialogIDs)
+        string combinedText = "";
+        string mainID = dialogIDs.Count > 0 ? dialogIDs[0] : "Dialog";
+
+        for (int i = 0; i < dialogIDs.Count; i++)
         {
+            string id = dialogIDs[i];
             DialogEntry entry = _dialogEntries.Find(x => x.ID == id);
 
             if (entry != null)
@@ -107,6 +111,11 @@ public class DialogManager : MonoBehaviour
                 if (_subtitleText != null)
                     _subtitleText.text = entry.SubtitleText;
 
+                if (i > 0)
+                    combinedText += "\n";
+
+                combinedText += entry.SubtitleText;
+
                 float duration = entry.AudioClip != null ? entry.AudioClip.length : 2f;
                 yield return new WaitForSeconds(duration);
 
@@ -118,8 +127,11 @@ public class DialogManager : MonoBehaviour
             }
         }
 
+        _storyUIManager.AddStory(mainID, combinedText);
+
         _isPlaying = false;
     }
+
 
     private IEnumerator PlaySingleMemoryFlash(List<Sprite> memorySprites)
     {

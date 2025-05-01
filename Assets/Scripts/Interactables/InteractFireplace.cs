@@ -1,6 +1,5 @@
 using UnityEngine;
 using PlayerSystem;
-using System.Collections;
 
 public class InteractFireplace : MonoBehaviour, IInteractable
 {
@@ -11,7 +10,6 @@ public class InteractFireplace : MonoBehaviour, IInteractable
 
     private bool _fireStarted = false;
     private bool _itemGiven = false;
-    private bool _interactionTriggered = false;
 
     public string GetInteractionText()
     {
@@ -26,10 +24,10 @@ public class InteractFireplace : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (!_interactionTriggered)
+        if (!_itemGiven && PlayerInventory.Instance != null)
         {
-            _interactionTriggered = true;
-            StartCoroutine(GiveItemAfterDelay(9f));
+            PlayerInventory.Instance.AddItem("HasInteractedWithFireplace");
+            _itemGiven = true;
         }
 
         if (_fireStarted)
@@ -61,16 +59,5 @@ public class InteractFireplace : MonoBehaviour, IInteractable
             _fireGameObject.SetActive(true);
 
         _fireStarted = true;
-    }
-
-    private IEnumerator GiveItemAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        if (!_itemGiven && PlayerInventory.Instance != null)
-        {
-            PlayerInventory.Instance.AddItem("HasInteractedWithFireplace");
-            _itemGiven = true;
-        }
     }
 }
