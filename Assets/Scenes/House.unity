@@ -14,16 +14,16 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.2
+  m_FogDensity: 0.15
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2
+  m_AmbientIntensity: 0.3
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: cc421da483ed06c49933077a621bff25, type: 2}
@@ -296,6 +296,129 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!1 &43638743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43638747}
+  - component: {fileID: 43638746}
+  - component: {fileID: 43638745}
+  - component: {fileID: 43638744}
+  - component: {fileID: 43638748}
+  m_Layer: 0
+  m_Name: Mirror
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &43638744
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43638743}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5258782, y: 1.1559349, z: 49.086952}
+  m_Center: {x: -0.036343064, y: 0.07796735, z: -25.04342}
+--- !u!23 &43638745
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43638743}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2a537b6c8d0512244a5b59df31b55fbc, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &43638746
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43638743}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &43638747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43638743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.1895557, y: -0.028936433, z: 0.02440687, w: 0.98113996}
+  m_LocalPosition: {x: 300.312, y: 5.4479, z: 386.3848}
+  m_LocalScale: {x: 0.24029796, y: -0.6291695, z: 0.0053340322}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1699535882}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 21.924, y: -2.937, z: 2.281}
+--- !u!114 &43638748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43638743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64e30287e745dc409c7a3ea30388e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _endingDialog: Mirror End
 --- !u!1 &61323559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3687,11 +3810,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526480905}
   m_CullTransparentMesh: 1
---- !u!82 &539796464 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3257706841572008796, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
-  m_PrefabInstance: {fileID: 724427262}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &548943055
 GameObject:
   m_ObjectHideFlags: 0
@@ -5424,15 +5542,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041569079365084518, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 295.812
+      value: 301.223
       objectReference: {fileID: 0}
     - target: {fileID: 1041569079365084518, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.873
+      value: 4.872
       objectReference: {fileID: 0}
     - target: {fileID: 1041569079365084518, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 388.308
+      value: 381.748
       objectReference: {fileID: 0}
     - target: {fileID: 1041569079365084518, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6737,139 +6855,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 378220058639761372, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1553011701}
-    - targetCorrespondingSourceObject: {fileID: 378220058639761372, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1553011710}
   m_SourcePrefab: {fileID: 100100000, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
---- !u!1 &726752356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!82 &724427263 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3257706841572008796, guid: 04d2088a426c7a748aeb6e9abf904544, type: 3}
+  m_PrefabInstance: {fileID: 724427262}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 726752357}
-  - component: {fileID: 726752358}
-  m_Layer: 0
-  m_Name: DialogManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &726752357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726752356}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1279929143}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &726752358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726752356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd55d4ce20497e48961bb23c961e924, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _subtitleText: {fileID: 1232557791}
-  _audioSource: {fileID: 539796464}
-  _memoryCanvas: {fileID: 1550584974}
-  _memoryImagePrefab: {fileID: 4779476281181363429, guid: 02008661cddcc9d42b9686959a762268, type: 3}
-  _memoryCanvasContent: {fileID: 873224536}
-  _memoryFlashDuration: 1.5
-  _storyUIManager: {fileID: 1414786327}
-  _dialogEntries:
-  - ID: Cupboard 1
-    AudioClip: {fileID: 8300000, guid: f7a5c3e4b2f564440af6600bbed8ce71, type: 3}
-    SubtitleText: "Not yet\u2026 I\u2019m not ready"
-    MemoryImages: []
-  - ID: Cupboard 2
-    AudioClip: {fileID: 8300000, guid: bd3497a32f68a454495fcbe63346d98c, type: 3}
-    SubtitleText: "I said, I\u2019m not ready yet!!!"
-    MemoryImages: []
-  - ID: CupboardOpened
-    AudioClip: {fileID: 8300000, guid: 6b2c3fc41ba9a9542897cf11c54395fc, type: 3}
-    SubtitleText: It's time, time to see finally see the real beauty. The truth of
-      perfection, that was kept away!
-    MemoryImages: []
-  - ID: Fireplace
-    AudioClip: {fileID: 8300000, guid: 98a00b8cdfbd2e7498c108b92a30efe2, type: 3}
-    SubtitleText: Its getting cold, time to fire up in the good old fireplace. There
-      should be some woods out back.
-    MemoryImages: []
-  - ID: Fireplace Fire
-    AudioClip: {fileID: 8300000, guid: cb316ea22bb01e549861f31fdfef2924, type: 3}
-    SubtitleText: Uuugh, Its so cold it could peel your face off. Good thing I got
-      the fire going.
-    MemoryImages: []
-  - ID: Piano Memories
-    AudioClip: {fileID: 8300000, guid: ee50219ffef9c8d43b479b0197900547, type: 3}
-    SubtitleText: "The piano always remembers her\u2026"
-    MemoryImages: []
-  - ID: Throphy
-    AudioClip: {fileID: 8300000, guid: 8a2a64ae886ec8246b7dd428f3a3343d, type: 3}
-    SubtitleText: I was always a winner, never a loser. Unlike her.
-    MemoryImages: []
-  - ID: Vase Quest
-    AudioClip: {fileID: 8300000, guid: 10f071a1fb82642498d015f23f2feb98, type: 3}
-    SubtitleText: I should find the perfect flowers for this vase.
-    MemoryImages: []
-  - ID: Vase Found
-    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
-    SubtitleText: Perfect flowers from a perfect beauty.
-    MemoryImages: []
-  - ID: Log 1 - 1
-    AudioClip: {fileID: 8300000, guid: 37e6f32fd40eea04b9a81a285fbc37a7, type: 3}
-    SubtitleText: Auch, I got a splinter
-    MemoryImages: []
-  - ID: Log 1 - 2
-    AudioClip: {fileID: 8300000, guid: 27a8aa33f7995ed4181bf5d0db37aec7, type: 3}
-    SubtitleText: Careful honey, don't get the blood on me. I'm going to compete
-      soon!
-    MemoryImages: []
-  - ID: Log 1 - 3
-    AudioClip: {fileID: 8300000, guid: 7bb75b2d7f003d64eb423c1b7ffd7fac, type: 3}
-    SubtitleText: Sorry...
-    MemoryImages: []
-  - ID: Log 2 - 1
-    AudioClip: {fileID: 8300000, guid: 7f02212e73f0b854599fc5da3429150f, type: 3}
-    SubtitleText: '*Phone calling*'
-    MemoryImages: []
-  - ID: Log 2 - 2
-    AudioClip: {fileID: 8300000, guid: f6c54ada18d62aa40a3355f8a7ce04f0, type: 3}
-    SubtitleText: 'Amelia: Hi Li-'
-    MemoryImages: []
-  - ID: Log 2 - 3
-    AudioClip: {fileID: 8300000, guid: 2eecfc168da21734a89edff4b7a9b6dc, type: 3}
-    SubtitleText: 'Lisa: Where the hell are you?!'
-    MemoryImages: []
-  - ID: Log 2 - 4
-    AudioClip: {fileID: 8300000, guid: 45c80aefb5543a249beeda0f5d737a4d, type: 3}
-    SubtitleText: 'Amelia: Why do you sound angry?'
-    MemoryImages: []
-  - ID: Log 2 - 5
-    AudioClip: {fileID: 8300000, guid: 1fc7d31ba148c7c408bb956fe2096aea, type: 3}
-    SubtitleText: 'Lisa: Why? (Laugh) Are you joking right now? I already called
-      the police. You need to-.'
-    MemoryImages: []
-  - ID: Log 2 - 6
-    AudioClip: {fileID: 8300000, guid: 24a8650b288827c4b9f8b32cc578cbe4, type: 3}
-    SubtitleText: '*phone disconnecting*'
-    MemoryImages: []
 --- !u!1 &743552198
 GameObject:
   m_ObjectHideFlags: 0
@@ -9302,8 +9293,8 @@ Transform:
   - {fileID: 554449368}
   - {fileID: 1625592068}
   - {fileID: 1471767266}
+  - {fileID: 1663907828}
   - {fileID: 1076930714}
-  - {fileID: 726752357}
   m_Father: {fileID: 1400778882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1289376883
@@ -10499,7 +10490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1434336059
 Transform:
   m_ObjectHideFlags: 0
@@ -11801,18 +11792,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1553011710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202494683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92aa8b3c4f2289d44b4689d6f2ac5e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1564950664
 GameObject:
   m_ObjectHideFlags: 0
@@ -12298,6 +12277,419 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645382246}
   m_CullTransparentMesh: 1
+--- !u!1 &1663907827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1663907828}
+  - component: {fileID: 1663907829}
+  m_Layer: 0
+  m_Name: DialogManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1663907828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663907827}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1279929143}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663907829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663907827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd55d4ce20497e48961bb23c961e924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _subtitleText: {fileID: 1232557791}
+  _audioSource: {fileID: 724427263}
+  _memoryCanvas: {fileID: 1550584974}
+  _memoryImagePrefab: {fileID: 4779476281181363429, guid: 02008661cddcc9d42b9686959a762268, type: 3}
+  _memoryCanvasContent: {fileID: 1550584975}
+  _memoryFlashDuration: 1.5
+  _storyUIManager: {fileID: 1414786327}
+  _dialogEntries:
+  - ID: Cupboard 1
+    AudioClip: {fileID: 8300000, guid: f7a5c3e4b2f564440af6600bbed8ce71, type: 3}
+    SubtitleText: "Not yet\u2026 I\u2019m not ready"
+    MemoryImages: []
+  - ID: Cupboard 2
+    AudioClip: {fileID: 8300000, guid: bd3497a32f68a454495fcbe63346d98c, type: 3}
+    SubtitleText: "I said, I\u2019m not ready yet!!!"
+    MemoryImages: []
+  - ID: CupboardOpened
+    AudioClip: {fileID: 8300000, guid: 6b2c3fc41ba9a9542897cf11c54395fc, type: 3}
+    SubtitleText: It's time, time to see finally see the real beauty. The truth of
+      perfection, that was kept away!
+    MemoryImages: []
+  - ID: Fireplace
+    AudioClip: {fileID: 8300000, guid: 98a00b8cdfbd2e7498c108b92a30efe2, type: 3}
+    SubtitleText: Its getting cold, time to fire up in the good old fireplace. There
+      should be some woods out back.
+    MemoryImages: []
+  - ID: Fireplace Fire
+    AudioClip: {fileID: 8300000, guid: cb316ea22bb01e549861f31fdfef2924, type: 3}
+    SubtitleText: Uuugh, Its so cold it could peel your face off. Good thing I got
+      the fire going.
+    MemoryImages: []
+  - ID: Piano Memories
+    AudioClip: {fileID: 8300000, guid: ee50219ffef9c8d43b479b0197900547, type: 3}
+    SubtitleText: "The piano always remembers her\u2026"
+    MemoryImages: []
+  - ID: Throphy
+    AudioClip: {fileID: 8300000, guid: 8a2a64ae886ec8246b7dd428f3a3343d, type: 3}
+    SubtitleText: I was always a winner, never a loser. Unlike her.
+    MemoryImages: []
+  - ID: Vase Quest
+    AudioClip: {fileID: 8300000, guid: 10f071a1fb82642498d015f23f2feb98, type: 3}
+    SubtitleText: I should find the perfect flowers for this vase.
+    MemoryImages: []
+  - ID: Vase Found
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: Perfect flowers from a perfect beauty.
+    MemoryImages: []
+  - ID: Log 1 - 1
+    AudioClip: {fileID: 8300000, guid: 37e6f32fd40eea04b9a81a285fbc37a7, type: 3}
+    SubtitleText: Auch, I got a splinter
+    MemoryImages: []
+  - ID: Log 1 - 2
+    AudioClip: {fileID: 8300000, guid: 27a8aa33f7995ed4181bf5d0db37aec7, type: 3}
+    SubtitleText: Careful honey, don't get the blood on me. I'm going to compete
+      soon!
+    MemoryImages: []
+  - ID: Log 1 - 3
+    AudioClip: {fileID: 8300000, guid: 7bb75b2d7f003d64eb423c1b7ffd7fac, type: 3}
+    SubtitleText: Sorry...
+    MemoryImages: []
+  - ID: Log 2 - 1
+    AudioClip: {fileID: 8300000, guid: 7f02212e73f0b854599fc5da3429150f, type: 3}
+    SubtitleText: '*Phone calling*'
+    MemoryImages: []
+  - ID: Log 2 - 2
+    AudioClip: {fileID: 8300000, guid: f6c54ada18d62aa40a3355f8a7ce04f0, type: 3}
+    SubtitleText: 'Amelia: Hi Li-'
+    MemoryImages: []
+  - ID: Log 2 - 3
+    AudioClip: {fileID: 8300000, guid: 2eecfc168da21734a89edff4b7a9b6dc, type: 3}
+    SubtitleText: 'Lisa: Where the hell are you?!'
+    MemoryImages: []
+  - ID: Log 2 - 4
+    AudioClip: {fileID: 8300000, guid: 45c80aefb5543a249beeda0f5d737a4d, type: 3}
+    SubtitleText: 'Amelia: Why do you sound angry?'
+    MemoryImages: []
+  - ID: Log 2 - 5
+    AudioClip: {fileID: 8300000, guid: 1fc7d31ba148c7c408bb956fe2096aea, type: 3}
+    SubtitleText: 'Lisa: Why? (Laugh) Are you joking right now? I already called
+      the police. You need to-.'
+    MemoryImages: []
+  - ID: Log 2 - 6
+    AudioClip: {fileID: 8300000, guid: 24a8650b288827c4b9f8b32cc578cbe4, type: 3}
+    SubtitleText: '*phone disconnecting*'
+    MemoryImages: []
+  - ID: River 1
+    AudioClip: {fileID: 8300000, guid: 27a8aa33f7995ed4181bf5d0db37aec7, type: 3}
+    SubtitleText: 'Random person: Miss are you okay?'
+    MemoryImages:
+    - {fileID: 21300000, guid: 0257bfe640b50514189785cced1ae42b, type: 3}
+  - ID: River 2
+    AudioClip: {fileID: 8300000, guid: 45c80aefb5543a249beeda0f5d737a4d, type: 3}
+    SubtitleText: 'Me: What do you mean okay?'
+    MemoryImages:
+    - {fileID: 21300000, guid: e9840e6cf6e1b7948a89fc77e37e8d30, type: 3}
+  - ID: River 3
+    AudioClip: {fileID: 8300000, guid: 24a8650b288827c4b9f8b32cc578cbe4, type: 3}
+    SubtitleText: 'Person: You have a wound on your face, and it''s bleeding a little'
+    MemoryImages: []
+  - ID: River 4
+    AudioClip: {fileID: 8300000, guid: 24a8650b288827c4b9f8b32cc578cbe4, type: 3}
+    SubtitleText: 'Me: GIVE ME A MIRROR NOW!
+
+      (begins sobbing)'
+    MemoryImages: []
+  - ID: Bridge 1
+    AudioClip: {fileID: 8300000, guid: 7f02212e73f0b854599fc5da3429150f, type: 3}
+    SubtitleText: '**Phone calling.**'
+    MemoryImages: []
+  - ID: Bridge 2
+    AudioClip: {fileID: 8300000, guid: 7f02212e73f0b854599fc5da3429150f, type: 3}
+    SubtitleText: 'Thomas: Hey, I heard about the car accident, how is she doing?
+      Please Amelia, I need to talk to her.'
+    MemoryImages: []
+  - ID: Bridge 3
+    AudioClip: {fileID: 8300000, guid: 7f02212e73f0b854599fc5da3429150f, type: 3}
+    SubtitleText: 'Me: Leave us alone, like you left us when we needed you'
+    MemoryImages: []
+  - ID: Bridge 4
+    AudioClip: {fileID: 8300000, guid: 7f02212e73f0b854599fc5da3429150f, type: 3}
+    SubtitleText: 'Thomas: Don''t lie to me, I couldnt have known that you were-'
+    MemoryImages: []
+  - ID: Bridge 5
+    AudioClip: {fileID: 8300000, guid: 24a8650b288827c4b9f8b32cc578cbe4, type: 3}
+    SubtitleText: '*Phone call ended*'
+    MemoryImages: []
+  - ID: Bridge 6
+    AudioClip: {fileID: 8300000, guid: 24a8650b288827c4b9f8b32cc578cbe4, type: 3}
+    SubtitleText: 'Whisper: Goddammit..'
+    MemoryImages: []
+  - ID: Cliff 1
+    AudioClip: {fileID: 8300000, guid: 2eecfc168da21734a89edff4b7a9b6dc, type: 3}
+    SubtitleText: Nurse **do you know where your mom and dad are?**
+    MemoryImages: []
+  - ID: Cliff 2
+    AudioClip: {fileID: 8300000, guid: 2eecfc168da21734a89edff4b7a9b6dc, type: 3}
+    SubtitleText: 'Amy: no i dont, mom was with me when it went (makes crash noise
+      with mouth)
+
+      (pause) am i going to be allright?'
+    MemoryImages: []
+  - ID: Cliff 3
+    AudioClip: {fileID: 8300000, guid: 2eecfc168da21734a89edff4b7a9b6dc, type: 3}
+    SubtitleText: 'Nurse: dont worry for now you should just get some rest'
+    MemoryImages: []
+  - ID: Cliff 4
+    AudioClip: {fileID: 8300000, guid: 24a8650b288827c4b9f8b32cc578cbe4, type: 3}
+    SubtitleText: 'Nurse: (under bated breath) that mother is a horrible mother...'
+    MemoryImages: []
+  - ID: Cliff 5
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Amy: mom isnt horrible she''s really nice.'
+    MemoryImages: []
+  - ID: Deer
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: They say one must imaigne Sisyphus happy. But the true happines
+      is reaching the end, the perfection.
+    MemoryImages: []
+  - ID: Well 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: Thank you for the help Lia.'
+    MemoryImages: []
+  - ID: Well 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lia: I''m happy to help... But I''m a litte sad that Amy Isn''t
+      here.'
+    MemoryImages: []
+  - ID: Well 3
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: Me too, but you should be fine. You look stunnning....Just
+      like that woman.'
+    MemoryImages: []
+  - ID: Well 4
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lia: (Laugh) Like my mom? Everyone says we look alike, but I don''t
+      see it.'
+    MemoryImages: []
+  - ID: Well 5
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: That''s okay honey. I''l help you see it'
+    MemoryImages: []
+  - ID: Dropped Items
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: Huh? When did i drop these?
+    MemoryImages: []
+  - ID: Car 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: '**Sounds of a car driving**'
+    MemoryImages: []
+  - ID: Car 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lia: Miss. Mockfowl, where are we going? This isn''t the way to
+      your home.'
+    MemoryImages: []
+  - ID: Car 3
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: Listen uh.... Honey. We are going to another little home I
+      have in the woods. It will be so wonderful. Just you wait.'
+    MemoryImages: []
+  - ID: Car 4
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lia: A home in the forest? Woah, that must look so beautiful!'
+    MemoryImages: []
+  - ID: Car 5
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: Oh it is... It is going to be so... beautiful.'
+    MemoryImages: []
+  - ID: Flower 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: Hello Lisa, How is Arthur and Lia doing?'
+    MemoryImages: []
+  - ID: Flower 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lisa: They are doing well. Lia baked a cake for us today, it tasted
+      amazing, how about you?'
+    MemoryImages: []
+  - ID: Flower 3
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: I''m doing fantastic! (Awkward Pause)'
+    MemoryImages: []
+  - ID: Flower 4
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lisa: Right... and what about your family?'
+    MemoryImages: []
+  - ID: Flower 5
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: Oh, shes fine, ask her yourself. You know how much she loves
+      going to the beauty peagant with me'
+    MemoryImages: []
+  - ID: Flower 6
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lisa: Really? She never looks like she''s having fun, but if you
+      say so. Where is she anyway?'
+    MemoryImages: []
+  - ID: Flower 7
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: Huh? She was here a moment, ago. Well she''ll turn up soon
+      enough, I  need to finish this competition first'
+    MemoryImages: []
+  - ID: Amy Grave 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: '**Male Crying**'
+    MemoryImages: []
+  - ID: Amy Grave 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Thomas: I should have tried harder.  Maybe you would have survived.
+      I should have gotten you away from her sooner, but the court is taking too
+      long. I should-.
+
+      (approaching Steps )'
+    MemoryImages: []
+  - ID: Amy Grave 3
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Thoma: YOU! THIS IS YOUR FAULT'
+    MemoryImages: []
+  - ID: Amy Grave 4
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: I... How...I thought... I thought she was okay. I thought
+      she was fine. She looked fine. She did. I couldn''t have known. I couldn''t.
+      Well, I wasn''t actually there I had to go, but I thought she was going to
+      make it. I really did. But I-'
+    MemoryImages: []
+  - ID: Amy Grave 5
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Thomas: You... You weren''t even there?'
+    MemoryImages: []
+  - ID: Placing 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: '**Heart moniter beebing**'
+    MemoryImages: []
+  - ID: Placing 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Amy: Mom.... You are here'
+    MemoryImages: []
+  - ID: Placing 3
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Nurse: I''m not your mom sweetie.'
+    MemoryImages: []
+  - ID: Placing 4
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Amy: You look so pretty mommy!'
+    MemoryImages: []
+  - ID: Placing 5
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: '**Faster beebing**'
+    MemoryImages: []
+  - ID: Placing 6
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Nurse: Doctor! Where is the doctor!'
+    MemoryImages: []
+  - ID: Placing 7
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: '**Hurried steps**'
+    MemoryImages: []
+  - ID: Placing 8
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Amy: Dad... You are finally here, I knew you loved me.'
+    MemoryImages: []
+  - ID: Placing 9
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Doctor: She''s going delirious, quickly we need the debilitator!'
+    MemoryImages: []
+  - ID: Placing 10
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Amy: Mom...Dad.... Im glad you are both here. I''m so happy, im
+      so happy, I''m so.... so....'
+    MemoryImages: []
+  - ID: Placing 11
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: '**Flattens**'
+    MemoryImages: []
+  - ID: Doll Dialog
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: It wasn't my fault. We were running late because you had forgotten
+      your stupid doll. It wasn't me, not me.... **(Sigh)** But the doll, it looked
+      so pretty*
+    MemoryImages: []
+  - ID: Knife Dialog 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: '**Sound of door opening**'
+    MemoryImages: []
+  - ID: Knife Dialog 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lisa: Is this where you have been hiding you bitch!?'
+    MemoryImages: []
+  - ID: Knife Dialog 3
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Lisa: Oh, god.... Oh no, oh nononono,WHY?'
+    MemoryImages: []
+  - ID: Knife Dialog 4
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: 'Me: I''m scarred, but i''m finally going to be so beautiful!'
+    MemoryImages: []
+  - ID: Dead Body 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: What In the World...
+    MemoryImages: []
+  - ID: Dead Body 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: What is something like this doing out here?
+    MemoryImages: []
+  - ID: Dead Body 3
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: From the looks of it there seems to be some kind of cosmetic product
+      on it..
+    MemoryImages: []
+  - ID: Lost 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: What is this...?Oh... She looks amazing. They all look amazing
+    MemoryImages: []
+  - ID: Lost 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: They-we  are all so stunning. I look so good. Finally, i can see
+      the truth.  I see it... And it's so.... so.... beautiful...
+    MemoryImages: []
+  - ID: GameWon 1
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: Oh god, please. I'm much better now. I see the truth, I just need
+      to fix it...
+    MemoryImages: []
+  - ID: GameWon 2
+    AudioClip: {fileID: 8300000, guid: 4b6122ac3357be84a85ebe7a9f74c1d6, type: 3}
+    SubtitleText: I.... I Just need a chance. I know what i must do. just one.....
+      more.... chance...... Just....... one.... more.....
+    MemoryImages: []
+  - ID: Mirror End
+    AudioClip: {fileID: 8300000, guid: b50ebf91229d66b46a9e508cc025c328, type: 3}
+    SubtitleText: Go towards the pit!!!
+    MemoryImages: []
 --- !u!1 &1680984622
 GameObject:
   m_ObjectHideFlags: 0
@@ -12373,6 +12765,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680984622}
   m_CullTransparentMesh: 1
+--- !u!1 &1699535881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699535882}
+  - component: {fileID: 1699535885}
+  - component: {fileID: 1699535884}
+  - component: {fileID: 1699535883}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1699535882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699535881}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.65813, y: 0.73824495, z: -0.120579205, w: -0.08555706}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 43638747}
+  m_LocalEulerAnglesHint: {x: 16.897, y: 178.06, z: -83.721}
+--- !u!114 &1699535883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699535881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!81 &1699535884
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699535881}
+  m_Enabled: 1
+--- !u!20 &1699535885
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699535881}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: c8a719a5afba386449b36483f2770adf, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1704747019
 GameObject:
   m_ObjectHideFlags: 0
@@ -18093,14 +18622,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000012189588039}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9999952, z: -0, w: 0.0031114428}
+  m_LocalRotation: {x: -0, y: -0.9999995, z: -0, w: 0.0009829141}
   m_LocalPosition: {x: 1.9043365, y: -0.34302664, z: 0.8355882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000010681719653}
   m_Father: {fileID: 720814276}
-  m_LocalEulerAnglesHint: {x: 0, y: -179.643, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.887, z: 0}
 --- !u!114 &4000012028942700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18114,7 +18643,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _requiredItems:
-  - HasCompletedStory
+  - BridgeIncident
+  - CarInteracted
+  - CliffCliffert
+  - CliffCliffert
+  - Flowers
+  - DeadBodyInteracted
+  - DollInteracted
+  - DroppedItemsInteracted
+  - AmysGraveSeen
+  - KnifeInteracted
+  - AmysGravenGivenFlower
+  - WellInteracted
   _lockedFirstDialogID: Cupboard 1
   _lockedRepeatDialogID: Cupboard 2
   _unlockDialogID: CupboardOpened
@@ -24694,3 +25234,4 @@ SceneRoots:
   - {fileID: 1076547580}
   - {fileID: 239991210}
   - {fileID: 1400778882}
+  - {fileID: 43638747}
